@@ -5,7 +5,7 @@ public class BigFractions {
     private BigInteger numerator;
     private BigInteger denominator;
 
-    public BigInteger getNumerator(BigInteger numerator) {
+    public BigInteger getNumerator() {
         return numerator;
     }
 
@@ -13,7 +13,7 @@ public class BigFractions {
         this.numerator = numerator;
     }
 
-    public BigInteger getDenominator(BigInteger denominator) {
+    public BigInteger getDenominator() {
         return denominator;
     }
 
@@ -46,9 +46,13 @@ public class BigFractions {
         // "-3/5" -TODO - or (-3/5)"
         String[] split = fractionStr.split("/");
         String numeratorStr = split[0];
-        String denominatorStr = split[0];
+        String denominatorStr = split[1];
         return new BigFractions(numeratorStr, denominatorStr);
     }
 
+    @Override
+    public String toString() {
+        return String.format("(%s/%s)", getNumerator().toString(), getDenominator().toString());
+    }
 
 }
