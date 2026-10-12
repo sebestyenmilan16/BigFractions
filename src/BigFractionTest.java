@@ -36,4 +36,17 @@ public class BigFractionTest {
         Assert.assertTrue(BigFractions2.isAllesthanB(a, b));
     }
 
+    @Test
+    public void testRelations() {
+        BigFractions a = BigFractions.parse("1/3");
+        BigFractions b = BigFractions.parse("2/3");
+
+        Assert.assertTrue(BigFractions2.isAllesthanB(a, b));
+        Assert.assertFalse(BigFractions2.isAgreaterthanB(a, b));
+        Assert.assertFalse(BigFractions2.equals(a, b));
+        Assert.assertFalse(BigFractions2.isAgreaterthanOrEqualB(a, b));
+        Assert.assertTrue(BigFractions2.isAllestthanOrEqualB(a, b));
+        Assert.assertTrue(BigFractions2.notEquals(a, b));
+    }
+
 }
