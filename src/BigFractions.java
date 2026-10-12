@@ -1,4 +1,6 @@
+import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.math.RoundingMode;
 
 public class BigFractions {
 
@@ -53,6 +55,23 @@ public class BigFractions {
     @Override
     public String toString() {
         return String.format("(%s/%s)", getNumerator().toString(), getDenominator().toString());
+    }
+
+    public BigDecimal toBigDecimal() {
+        BigDecimal bigDecimalNumerator = new BigDecimal(getNumerator());
+        BigDecimal bigDecimalDenominator = new BigDecimal(getDenominator());
+        BigDecimal result = bigDecimalNumerator.divide(bigDecimalDenominator, RoundingMode.HALF_UP);
+        return result;
+    }
+
+    // TODO - common denominator check
+    // @param obj BigFractions
+    // @return boolean
+
+    @Override
+    public boolean equals(Object obj) {
+        BigFractions other = (BigFractions) obj;
+        return this.toBigDecimal().equals(other.toBigDecimal());
     }
 
 }
