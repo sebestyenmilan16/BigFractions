@@ -29,4 +29,11 @@ public class BigFractionTest {
         Assert.assertTrue(a.equals(b));
     }
 
+    @Test
+    public void testLessthan() {
+        BigFractions a = BigFractions.parse("1/3");
+        BigFractions b = BigFractions.parse("2/3");
+        Assert.assertTrue(BigFractions2.isAllesthanB(a, b));
+    }
+
 }
