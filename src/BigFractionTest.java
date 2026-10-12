@@ -13,4 +13,9 @@ public class BigFractionTest {
         BigFractions e = new BigFractions(new BigInteger("1"), new BigInteger("2"));
     }
 
+    @Test
+    public void testParse() {
+        BigFractions a = BigFractions.parse("-2/5");
+        System.out.println(a);
+    }
 }

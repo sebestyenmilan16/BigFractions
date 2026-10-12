@@ -42,4 +42,13 @@ public class BigFractions {
         setDenominator(denominator);
     }
 
+    public static BigFractions parse(String fractionStr) {
+        // "-3/5" -TODO - or (-3/5)"
+        String[] split = fractionStr.split("/");
+        String numeratorStr = split[0];
+        String denominatorStr = split[0];
+        return new BigFractions(numeratorStr, denominatorStr);
+    }
+
+
 }
