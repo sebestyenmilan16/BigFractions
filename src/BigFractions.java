@@ -74,4 +74,22 @@ public class BigFractions {
         return this.toBigDecimal().equals(other.toBigDecimal());
     }
 
+    public void osztas(String szam1, String szam2) {
+
+        String[] szamegy = szam1.split("/");
+        int szamegynevezo = Integer.parseInt(szamegy[0]);
+        int szamegyoszto = Integer.parseInt(szamegy[1]);
+
+        String[] szamketto = szam2.split("/");
+        int szamkettonevezo = Integer.parseInt(szamketto[0]);
+        int szamkettooszto = Integer.parseInt(szamketto[1]);
+
+        String eredmeny = String.valueOf(szamegynevezo*szamkettooszto + "/" + szamegyoszto*szamkettonevezo);
+
+        System.out.println(eredmeny);
+
+
+
+    }
+
 }

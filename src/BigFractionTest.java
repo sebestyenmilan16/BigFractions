@@ -49,4 +49,10 @@ public class BigFractionTest {
         Assert.assertTrue(BigFractions2.notEquals(a, b));
     }
 
+    @Test
+    public void testOsztas() {
+        BigFractions a = new BigFractions();
+        a.osztas("25/3", "10/4");
+    }
+
 }
